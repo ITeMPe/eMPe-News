@@ -1,6 +1,8 @@
 package mp.empe.news.entity;
 
+import javax.persistence.Entity;
 
+@Entity
 public class News {
 
     private String country;
