@@ -1,8 +1,9 @@
-package mp.empe.news.entity;
+package mp.empe.news.model;
 
-import javax.persistence.Entity;
+import org.springframework.stereotype.Component;
 
-@Entity
+
+@Component
 public class News {
 
     private String country;

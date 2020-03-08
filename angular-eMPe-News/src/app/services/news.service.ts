@@ -9,8 +9,7 @@ import { News } from '../common/news';
 })
 export class NewsService {
 
-private baseUrl___ = "http://localhost:8080/headlines/";
-private baseUrl = "http://newsapi.org/v2/top-headlines?country=pl&category=technology&apiKey=d5cb1c65bb3442048ecba183138ceaef";
+private baseUrl = "http://localhost:8080/headlines/";
 
 constructor(private httpClient: HttpClient) { }
 
