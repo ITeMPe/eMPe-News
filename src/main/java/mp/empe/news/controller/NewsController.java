@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping("/")
 public class NewsController {
 
-    static final String key = d5cb1c65bb3442048ecba183138ceaef;
+    static final String key = "d5cb1c65bb3442048ecba183138ceaef";
 
     @GetMapping("/headlines/{country_id}/{category_id}")
     public String printWelcome(@PathVariable("country_id") String country_id, @PathVariable("category_id") String category_id) {

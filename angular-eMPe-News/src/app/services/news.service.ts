@@ -9,19 +9,17 @@ import { News } from '../common/news';
 })
 export class NewsService {
 
-private baseUrl = "http://localhost:8080/headlines/";
+private baseUrl = "http://localhost:8080/headlines/pl/technology";
 
 constructor(private httpClient: HttpClient) { }
 
   getNews(): Observable<News[]>{
     return this.httpClient.get<GetResponseNews>(this.baseUrl).pipe(
-      map(response => response._embedded.news)
+      map(response => response.articles)
     );
   }
 }
 
 interface GetResponseNews{
-  _embedded: {
-    news: News[];
-  }
+  articles: News[];
 }

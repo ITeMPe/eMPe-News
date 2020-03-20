@@ -8,10 +8,6 @@ import { News } from './common/news';
 })
 export class AppComponent {
   title = 'angular-eMPe-News';
-  clickButton() {  
-    let num = 10;  
-    num++;  
-    alert(`Value of 'num' is : ${num}`);  
-  }  
+
 
 }

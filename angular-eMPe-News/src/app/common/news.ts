@@ -1,8 +1,7 @@
+import { Articles } from './articles';
+
 export class News {
-
-  "status": string;
-  "totalResults":number;
-  "articles":[]
-
-
-}
+  country: string;
+  category: string;
+  articles: Articles[]
+  }
