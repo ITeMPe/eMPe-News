@@ -14,7 +14,7 @@ public class NewsController {
     static final String key = "d5cb1c65bb3442048ecba183138ceaef";
 
     @GetMapping("/headlines/{country_id}/{category_id}")
-    public String printWelcome(@PathVariable("country_id") String country_id, @PathVariable("category_id") String category_id) {
+    public String get_top_headlines(@PathVariable("country_id") String country_id, @PathVariable("category_id") String category_id) {
         RestTemplate restTemplate = new RestTemplate();
         String url = "http://newsapi.org/v2/top-headlines?country="+country_id+"&category="+category_id+"&apiKey="+key;
         return restTemplate.getForObject(url, String.class);
