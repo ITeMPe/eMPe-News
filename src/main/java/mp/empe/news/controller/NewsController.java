@@ -21,19 +21,23 @@ public class NewsController {
         RestTemplate restTemplate = new RestTemplate();
         String url = "http://newsapi.org/v2/top-headlines?country="+country_id+"&category="+category_id+"&apiKey="+key;
         String result =  restTemplate.getForObject(url, String.class);
-
         Map<String, String> mydata = new HashMap<String, String>();
         mydata.put("country", country_id);
         mydata.put("category", category_id);
-        mydata.put("articles", result);
+        mydata.put("body", result);
 
-//        Map<String, String> alldata = new HashMap<String, String>();
-//        alldata.put("data", mydata);
+        Map<String, Object> alldata = new HashMap<String, Object>();
+        alldata.put("alldata", mydata);
 
         // Create JSON object from Java Map
-        JSONObject tomJsonObj = new JSONObject(mydata);
-        System.out.println(mydata);
-        return  tomJsonObj.toString();
+        JSONObject tomJsonObj = new JSONObject(alldata);
+//        System.out.println(mydata);
+//        System.out.println(tomJsonObj.toString());
+        String str = tomJsonObj.toString();
+        str = str.replace("\\", "");
+        System.out.println(str);
+
+        return  str;
     }
 
     @GetMapping("/everything")
