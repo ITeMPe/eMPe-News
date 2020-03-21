@@ -42,23 +42,9 @@
       </div>
 
       <div class="row" *ngFor="let record of news">
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100">
-            <a href={{record.url}}><img class="card-img-top" src={{record.urlToImage}} alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href={{record.url}}>{{record.title}}</a>
-              </h4>
-              <p class="card-text">{{record.description}}</p>
-              <h6>Autor: {{record.author}}</h6>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row" *ngFor="let record of news">
+        <h1>Country: {{record.country}}</h1>
+        <h1>Category: {{record.category}}</h1>
+        <h2></h2>
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card h-100">
             <a href={{record.url}}><img class="card-img-top" src={{record.urlToImage}} alt=""></a>
