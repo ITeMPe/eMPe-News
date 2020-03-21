@@ -34,8 +34,11 @@ app/**/*.js.map
 node_modules/
 bower_components/
 
-# IDEs and editors
+#intellij
 .idea/
+target/
+*/target/*
+*.iml
 
 # misc
 .sass-cache/
