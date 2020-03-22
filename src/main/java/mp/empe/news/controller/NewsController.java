@@ -1,6 +1,8 @@
 package mp.empe.news.controller;
 
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
@@ -21,23 +23,26 @@ public class NewsController {
         RestTemplate restTemplate = new RestTemplate();
         String url = "http://newsapi.org/v2/top-headlines?country="+country_id+"&category="+category_id+"&apiKey="+key;
         String result =  restTemplate.getForObject(url, String.class);
-        Map<String, String> mydata = new HashMap<String, String>();
-        mydata.put("country", country_id);
-        mydata.put("category", category_id);
-        mydata.put("body", result);
+       try {
 
-        Map<String, Object> alldata = new HashMap<String, Object>();
-        alldata.put("alldata", mydata);
+           JSONObject jsonResult = new JSONObject(result);
+           jsonResult.putOpt("country",country_id);
+           jsonResult.putOpt("category",category_id);
+           System.out.println(jsonResult);
+           System.out.println(jsonResult.toString());
+           return jsonResult.toString();
 
-        // Create JSON object from Java Map
-        JSONObject tomJsonObj = new JSONObject(alldata);
-//        System.out.println(mydata);
-//        System.out.println(tomJsonObj.toString());
-        String str = tomJsonObj.toString();
-        str = str.replace("\\", "");
-        System.out.println(str);
-
-        return  str;
+//           JSONObject jsonObject = new JSONObject();
+//           jsonObject.putOpt("alldata", jsonResult);
+//           System.out.println(jsonObject);
+//           System.out.println(jsonObject.toString());
+//           return jsonObject.toString();
+       }
+       catch (Exception e)
+        {
+            System.out.println("dupa");
+            return "{}";
+        }
     }
 
     @GetMapping("/everything")

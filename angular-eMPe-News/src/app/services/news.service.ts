@@ -15,11 +15,11 @@ constructor(private httpClient: HttpClient) { }
 
   getNews(): Observable<News[]>{
     return this.httpClient.get<GetResponseNews>(this.baseUrl).pipe(
-      map(response => response.alldata)
+      map(response => response.articles)
     );
   }
 }
 
 interface GetResponseNews{
-  alldata: News[];
+  articles: News[];
 }
