@@ -6,4 +6,5 @@ export class Articles {
     source:string;
     url: string;
     urlToImage: string;
+    content:string
 }

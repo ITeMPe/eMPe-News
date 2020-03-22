@@ -18,10 +18,21 @@ constructor(private _newsService: NewsService) { }
     this.listNews();
   }
 
-  listNews(){
-    this._newsService.getNews().subscribe(
-      data => this.news = data
-  )
+//   listNews(){
+//     this._newsService.getNews().subscribe(
+//       data => this.news = data
+//   )
+// }
+listNews() {
+  this._newsService.getNews().subscribe(
+    data => this.news = data.articles.map(article => {
+      return {
+        ...article,
+        category: data.category,
+        country: data.country
+      };
+    })
+  );
 }
 
 }
