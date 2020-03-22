@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { News } from '../common/news';
 
 @Injectable({
@@ -19,7 +18,6 @@ constructor(private httpClient: HttpClient) { }
   }
   
 }
-
 
 interface GetResponseNews{
   articles: News[];

@@ -6,5 +6,5 @@ export class Articles {
     source:string;
     url: string;
     urlToImage: string;
-    content:string
+    content:string              // additional value for me ;)
 }
