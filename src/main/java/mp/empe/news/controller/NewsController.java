@@ -20,7 +20,7 @@ public class NewsController {
      * @param category_id Information about category in news [String]
      * @return json as String
      */
-    @GetMapping("/headlines/{country_id}/{category_id}")
+    @GetMapping("/news/{country_id}/{category_id}")
     public String get_top_headlines(@PathVariable("country_id") String country_id, @PathVariable("category_id") String category_id) {
         RestTemplate restTemplate = new RestTemplate();
         String url = "http://newsapi.org/v2/top-headlines?country="+country_id+"&category="+category_id+"&apiKey="+key;
@@ -45,7 +45,7 @@ public class NewsController {
      * For develop in future
      * @return json as String
      */
-    @GetMapping("/everything")
+    @GetMapping("/news/everything")
     public String get_everything(){
         RestTemplate restTemplate = new RestTemplate();
         String url = "http://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey="+key;
@@ -57,7 +57,7 @@ public class NewsController {
      * For develop in future
      * @return json as String
      */
-    @GetMapping("/sources")
+    @GetMapping("/news/sources")
     public String get_sources(){
         RestTemplate restTemplate = new RestTemplate();
         String url = "http://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey="+key;
