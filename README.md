@@ -8,3 +8,6 @@ mvn test
 
 ### Info about frontend project
 AngularEMPeNews ---> README
+
+### Api Documentation [Swagger]
+http://localhost:8080/swagger-ui.html
