@@ -26,17 +26,17 @@ public class NewsController {
         String url = "http://newsapi.org/v2/top-headlines?country="+country_id+"&category="+category_id+"&apiKey="+key;
         String result =  restTemplate.getForObject(url, String.class);
        try {
-
            JSONObject jsonResult = new JSONObject(result);
-           jsonResult.putOpt("country",country_id);
-           jsonResult.putOpt("category",category_id);
-           System.out.println(jsonResult);
-           System.out.println(jsonResult.toString());
-           return jsonResult.toString();
+           Object articles = jsonResult.get("articles");
+           JSONObject json = new JSONObject();
+           json.putOpt("country",country_id);
+           json.putOpt("category",category_id);
+           json.putOpt("articles",articles);
+           return json.toString();
        }
        catch (Exception e)
         {
-            return "{upssss....}";
+            return "{upssss....  :(((}";
         }
     }
 
