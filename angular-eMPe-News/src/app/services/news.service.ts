@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { News } from '../common/news';
 
 @Injectable({
@@ -9,7 +8,7 @@ import { News } from '../common/news';
 })
 export class NewsService {
 
-private baseUrl = "http://localhost:8080/headlines/pl/technology";
+private baseUrl = "http://localhost:8080/news/pl/technology";
 
 constructor(private httpClient: HttpClient) { }
 
@@ -19,7 +18,6 @@ constructor(private httpClient: HttpClient) { }
   }
   
 }
-
 
 interface GetResponseNews{
   articles: News[];

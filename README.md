@@ -1,22 +1,16 @@
 # eMPe-News
 
-###Get project:
-git clone git@github.com:ITeMPe/MessageViewer.git
-
-###Instal JDK:
-sudo apt-get install default-jdk
-
-#####Check version:
-javac -version
-
-### Instal Maven:
-sudo apt-get install maven
-
-#####Check version:
-mvn -version
-
 ### Build:
-mvn clean install
+mvn clean install or set configurations and run from InteliJ ;)
 
-###Run test:
+### Run app
+mvn spring-boot:run
+
+### Run test:
 mvn test
+
+### Info about frontend project
+AngularEMPeNews ---> README
+
+### Api Documentation [Swagger]
+http://localhost:8080/swagger-ui.html
