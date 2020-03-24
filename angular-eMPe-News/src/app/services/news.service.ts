@@ -8,7 +8,7 @@ import { News } from '../common/news';
 })
 export class NewsService {
 
-private baseUrl = "http://localhost:8080/headlines/pl/technology";
+private baseUrl = "http://localhost:8080/news/pl/technology";
 
 constructor(private httpClient: HttpClient) { }
 
